@@ -57,15 +57,6 @@ class InvestmentService implements InvestmentInterface
         ];
     }
 
-    public function getInvestmentProjectionWithTax(int $id, string $projectionDate): float
-    {
-        $investment = $this->getInvestmentById($id);
-
-        $this->verifyMinimumMonthOfInvestment($investment->sold_in, $projectionDate);
-
-        return $investment->value + $this->calculateGain($investment, $projectionDate);
-    }
-
     public function withdrawInvestment(int $id, string $withdrawDate): Investor
     {
         DB::beginTransaction();
