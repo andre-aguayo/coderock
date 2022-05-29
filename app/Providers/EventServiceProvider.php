@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Investment;
-use App\Models\InvestmentLog;
 use App\Models\Investor;
+use App\Observers\InvestmentObserver;
 use App\Observers\InvestorObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -31,7 +31,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         Investor::observe(InvestorObserver::class);
-        Investment::observe(InvestmentLog::class);
+        Investment::observe(InvestmentObserver::class);
     }
 
     /**
