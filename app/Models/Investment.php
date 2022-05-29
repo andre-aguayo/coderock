@@ -18,9 +18,14 @@ class Investment extends Model
         'active'
     ];
 
+    protected $hidden = [
+        'updated_at',
+        'deleted_at',
+    ];
+
     public function investor()
     {
-        return $this->belongsTo(Investment::class, 'investor_id');
+        return $this->belongsTo(Investor::class, 'investor_id');
     }
 
     public function type()

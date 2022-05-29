@@ -9,7 +9,7 @@ class InvestorLog extends Model
 {
     use HasFactory;
 
-    private $fillable = [
+    protected $fillable = [
         'investor_id',
         'name',
         'balance',

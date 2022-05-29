@@ -15,6 +15,12 @@ class Investor extends Model
         'balance'
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
     public function investments()
     {
         return $this->hasMany(Investment::class, 'investor_id');
