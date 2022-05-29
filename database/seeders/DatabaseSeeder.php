@@ -23,7 +23,13 @@ class DatabaseSeeder extends Seeder
 
     private function createInvestmentType()
     {
-        InvestmentType::create(["name" => "standard", "tax" => 0.52]);
+        InvestmentType::create([
+            "name" => "standard",
+            "gain" => 0.52,
+            "tax_less_one_year" => 22.5,
+            "tax_between_one_and_two_years" => 18.5,
+            "tax_older_two_years" => 15
+        ]);
     }
 
     private function createInvestor()
