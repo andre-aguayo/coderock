@@ -16,11 +16,14 @@ return new class extends Migration
         Schema::create('investment_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('tax', 5, 2, true)
+            $table->float('gain', 5, 2, true)
                 ->comment('in percentage');
-            $table->date('minimum_moths')
-                ->nullable()
-                ->comment('It is the minimum number of months. If null has no minimum time');
+            $table->float('tax_less_one_year', 5, 2, true)
+                ->comment('in percentage');
+            $table->float('tax_between_one_and_two_years', 5, 2, true)
+                ->comment('in percentage');
+            $table->float('tax_older_two_years', 5, 2, true)
+                ->comment('in percentage');
             $table->timestamps();
         });
     }

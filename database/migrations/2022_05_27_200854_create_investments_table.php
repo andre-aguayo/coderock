@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('investment_type_id')->constrained('investment_types');
             $table->float('value', 10, 2, true);
             $table->date('sold_in');
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
