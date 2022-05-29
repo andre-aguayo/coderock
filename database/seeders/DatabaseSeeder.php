@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\InvestmentType;
+use App\Models\Investor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,11 +16,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->createInvestmentType();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->createInvestor();
+    }
+
+    private function createInvestmentType()
+    {
+        InvestmentType::create(["name" => "standard", "tax" => 0.52]);
+    }
+
+    private function createInvestor()
+    {
+        Investor::create(["name" => 'iurru', "balance" => 7000.01]);
     }
 }
