@@ -14,7 +14,7 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre o projeto
 
 Este é um projeto desenvolvido em laravel para a realização do teste para a Coderockr. 
 
